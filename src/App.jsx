@@ -6,6 +6,10 @@ const App = (props) => {
   [WE, setWE] = useState(''),[CE, setCE] = useState(''),[EA, setEA] = useState(''),
   [SW, setSW] = useState(''),[SO, setSO] = useState(''),[SE, setSE] = useState('');
 
+  const setVal = (currentTurn, comeTurn) => {
+    console.log(currentTurn);
+  }
+
   return (
     <div>
       <table>
