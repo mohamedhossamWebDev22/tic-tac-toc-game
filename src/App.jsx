@@ -13,7 +13,7 @@ const App = (props) => {
     [SO, setSO] = useState(""),
     [SE, setSE] = useState("");
 
-  const [turn, setturn] = useState("(Imm .. who'r u?)");
+  const [turn, setturn] = useState("(Imm .. I Don't Lnow)");
 
   const btnClicked = () => {
     if (player == "X") {
@@ -24,11 +24,44 @@ const App = (props) => {
 
     setturn(player);
   };
+
+  const whoWon = () => {
+    console.log('iam here!!');
+    if (NW == NO && NE == NO && NW == 'X' ) {
+      alert('Player X Won :)')
+      window.location.reload()
+    }
+    else if (NW == NO && NE == NO && NW == 'O' ) {
+      alert('Player O Won :)')
+      window.location.reload()
+    }
+
+    if (SW == SO && SE == SO && SW == 'X' ) {
+      alert('Player X Won :)')
+      window.location.reload()
+    }
+    else if (SW == SO && SE == SO && SW == 'O' ) {
+      alert('Player O Won :)')
+      window.location.reload()
+    }
+
+    if (NW == WE && SW == WE && WE == 'X' ) {
+      alert('Player X Won :)')
+      window.location.reload()
+    }
+    else if (NW == WE && SW == WE && WE == 'O' ) {
+      alert('Player O Won :)')
+      window.location.reload()
+    }
+  }
+
   return (
-    <div>
-      <h1>
+    <div onClick={() =>{whoWon()}}>
+      <h1>The Last Turn:
         Player <a className="neon">{turn}</a>
       </h1>
+
+      {/* squares to play*/}
       <table>
         <tbody>
           <tr>
@@ -36,11 +69,12 @@ const App = (props) => {
               <button
                 onClick={() => {
                   btnClicked();
-                  if (NW == '') {
+                  if (NW == "") {
                     setNW(player);
-                  }
-                  else{
-                    alert('مينفعش')
+                  } else {
+                    alert(
+                      "مينفعش تلعب مكان صاحبك ، مش أصول بردو \n و عشان كده دورك هيروح، حق صاحبك اللي كنت هتتضحك عليه"
+                    );
                   }
                 }}
                 className=""
@@ -52,7 +86,13 @@ const App = (props) => {
               <button
                 onClick={() => {
                   btnClicked();
-                  setNO(player);
+                  if (NO == "") {
+                    setNO(player);
+                  } else {
+                    alert(
+                      "مينفعش تلعب مكان صاحبك ، مش أصول بردو \n و عشان كده دورك هيروح، حق صاحبك اللي كنت هتتضحك عليه"
+                    );
+                  }
                 }}
                 className=""
               >
@@ -63,7 +103,13 @@ const App = (props) => {
               <button
                 onClick={() => {
                   btnClicked();
-                  setNE(player);
+                  if (NE == "") {
+                    setNE(player);
+                  } else {
+                    alert(
+                      "مينفعش تلعب مكان صاحبك ، مش أصول بردو \n و عشان كده دورك هيروح، حق صاحبك اللي كنت هتتضحك عليه"
+                    );
+                  }
                 }}
                 className=""
               >
@@ -76,7 +122,13 @@ const App = (props) => {
               <button
                 onClick={() => {
                   btnClicked();
-                  setWE(player);
+                  if (WE == "") {
+                    setWE(player);
+                  } else {
+                    alert(
+                      "مينفعش تلعب مكان صاحبك ، مش أصول بردو \n و عشان كده دورك هيروح، حق صاحبك اللي كنت هتتضحك عليه"
+                    );
+                  }
                 }}
                 className=""
               >
@@ -87,7 +139,13 @@ const App = (props) => {
               <button
                 onClick={() => {
                   btnClicked();
-                  setCE(player);
+                  if (CE == "") {
+                    setCE(player);
+                  } else {
+                    alert(
+                      "مينفعش تلعب مكان صاحبك ، مش أصول بردو \n و عشان كده دورك هيروح، حق صاحبك اللي كنت هتتضحك عليه"
+                    );
+                  }
                 }}
                 className=""
               >
@@ -98,7 +156,13 @@ const App = (props) => {
               <button
                 onClick={() => {
                   btnClicked();
-                  setEA(player);
+                  if (EA == "") {
+                    setEA(player);
+                  } else {
+                    alert(
+                      "مينفعش تلعب مكان صاحبك ، مش أصول بردو \n و عشان كده دورك هيروح، حق صاحبك اللي كنت هتتضحك عليه"
+                    );
+                  }
                 }}
                 className=""
               >
@@ -111,7 +175,13 @@ const App = (props) => {
               <button
                 onClick={() => {
                   btnClicked();
-                  setSW(player);
+                  if (SW == "") {
+                    setSW(player);
+                  } else {
+                    alert(
+                      "مينفعش تلعب مكان صاحبك ، مش أصول بردو \n و عشان كده دورك هيروح، حق صاحبك اللي كنت هتتضحك عليه"
+                    );
+                  }
                 }}
                 className=""
               >
@@ -122,7 +192,13 @@ const App = (props) => {
               <button
                 onClick={() => {
                   btnClicked();
-                  setSO(player);
+                  if (SO == "") {
+                    setSO(player);
+                  } else {
+                    alert(
+                      "مينفعش تلعب مكان صاحبك ، مش أصول بردو \n و عشان كده دورك هيروح، حق صاحبك اللي كنت هتتضحك عليه"
+                    );
+                  }
                 }}
                 className=""
               >
@@ -133,7 +209,13 @@ const App = (props) => {
               <button
                 onClick={() => {
                   btnClicked();
-                  setSE(player);
+                  if (SE == "") {
+                    setSE(player);
+                  } else {
+                    alert(
+                      "مينفعش تلعب مكان صاحبك ، مش أصول بردو \n و عشان كده دورك هيروح، حق صاحبك اللي كنت هتتضحك عليه"
+                    );
+                  }
                 }}
                 className=""
               >
@@ -143,6 +225,15 @@ const App = (props) => {
           </tr>
         </tbody>
       </table>
+
+      {/* reset btn */}
+      <button 
+      onClick={() => {
+        window.location.reload()
+      }} 
+      className="reset">
+        Reset
+      </button>
     </div>
   );
 };
