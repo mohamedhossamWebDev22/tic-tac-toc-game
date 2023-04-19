@@ -13,7 +13,7 @@ const App = (props) => {
     [SO, setSO] = useState(""),
     [SE, setSE] = useState("");
 
-  const [turn, setturn] = useState("(Imm .. I Don't Lnow)");
+  const [turn, setturn] = useState("(Imm .. I Don't Know)");
 
   const btnClicked = () => {
     if (player == "X") {
@@ -25,44 +25,82 @@ const App = (props) => {
     setturn(player);
   };
 
+  const x_won=() => {
+    alert('Player X Won :)')
+    location.reload(true)
+  }
+  const o_won=() => {
+    alert('Player O Won :)')
+    location.reload(true)
+  }
+
   const whoWon = () => {
     console.log('iam here!!');
     if (NW == NO && NE == NO && NW == 'X' ) {
-      alert('Player X Won :)')
-      window.location.reload()
+      x_won()
     }
     else if (NW == NO && NE == NO && NW == 'O' ) {
-      alert('Player O Won :)')
-      window.location.reload()
+      o_won()
     }
 
     if (SW == SO && SE == SO && SW == 'X' ) {
-      alert('Player X Won :)')
-      window.location.reload()
+      x_won()
     }
     else if (SW == SO && SE == SO && SW == 'O' ) {
-      alert('Player O Won :)')
-      window.location.reload()
+      o_won()
     }
 
     if (NW == WE && SW == WE && WE == 'X' ) {
-      alert('Player X Won :)')
-      window.location.reload()
+      x_won()
     }
     else if (NW == WE && SW == WE && WE == 'O' ) {
-      alert('Player O Won :)')
-      window.location.reload()
+      o_won()
+    }
+
+    if (NE == EA && SE == EA && EA == 'X') {
+      x_won()
+    }
+    else if (NE == EA && SE == EA && EA == 'O') {
+      o_won()
+    }
+
+    if (CE == EA && WE == EA && EA == 'X') {
+      x_won()
+    }
+    else if (CE == EA && WE == EA && EA == 'O') {
+      o_won()
+    }
+
+    if (NO == SO && SO == CE && NO == 'X') {
+      x_won()
+    }
+    else if (NO == SO && SO == CE && NO == 'O') {
+      o_won()
+    }
+
+    if (NW == CE && SE == CE && CE == 'X') {
+      x_won()
+    }
+    else if (NW == CE && SE == CE && CE == 'O') {
+      o_won()
+    }
+
+    if (NE == CE && SW == CE && CE == 'X') {
+      x_won()
+    }
+    else if (NE == CE && SW == CE && CE == 'O') {
+      o_won()
     }
   }
 
   return (
-    <div onClick={() =>{whoWon()}}>
-      <h1>The Last Turn:
+    <div>
+      <h1>The Next Turn:
         Player <a className="neon">{turn}</a>
       </h1>
 
       {/* squares to play*/}
-      <table>
+      <table onClick={() =>{whoWon()}}>
         <tbody>
           <tr>
             <td>
@@ -229,10 +267,18 @@ const App = (props) => {
       {/* reset btn */}
       <button 
       onClick={() => {
-        window.location.reload()
+        location.reload(true)
       }} 
       className="reset">
         Reset
+      </button>
+
+      <button 
+      onClick={() => {
+        whoWon()
+      }} 
+      className="done">
+        Done
       </button>
     </div>
   );
