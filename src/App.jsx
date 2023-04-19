@@ -3,15 +3,10 @@ import { React, useState } from "react";
 var player = "";
 
 const App = (props) => {
-  const [NW, setNW] = useState(""),
-    [NO, setNO] = useState(""),
-    [NE, setNE] = useState(""),
-    [WE, setWE] = useState(""),
-    [CE, setCE] = useState(""),
-    [EA, setEA] = useState(""),
-    [SW, setSW] = useState(""),
-    [SO, setSO] = useState(""),
-    [SE, setSE] = useState("");
+  const 
+    [NW, setNW] = useState(""),[NO, setNO] = useState(""),[NE, setNE] = useState(""),
+    [WE, setWE] = useState(""),[CE, setCE] = useState(""),[EA, setEA] = useState(""),
+    [SW, setSW] = useState(""),[SO, setSO] = useState(""),[SE, setSE] = useState("");
 
   const [turn, setturn] = useState("(Imm .. I Don't Know)");
 
