@@ -90,7 +90,7 @@ const App = (props) => {
 
   return (
     <div>
-      <h1>The Next Turn:
+      <h1>
         Player <a className="neon">{turn}</a>
       </h1>
 
